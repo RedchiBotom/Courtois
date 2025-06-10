@@ -81,6 +81,30 @@
   </style>
 </head>
 <body>
+
+<div class="back-button">
+  <a href="javascript:history.back()">← Retour</a>
+</div>
+<style>
+  .back-button {
+    padding: 10px 20px;
+    text-align: left;
+  }
+  .back-button a {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 8px 14px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+  }
+  .back-button a:hover {
+    background-color: #0056b3;
+  }
+</style>
+
   <header>
     <h1>MaBoutique - Nos produits 🛒<span id="cart-count">0</span></h1>
     <nav><ul><li><a href="index.html">Accueil</a></li><li><a href="auth.html">Connexion</a></li><li><a href="panier.html">Panier</a></li></ul></nav>
@@ -109,5 +133,29 @@
     const count = cart.reduce((sum, item) => sum + item.quantity, 0);
     countSpan.textContent = count;
   </script>
+
+<div class="back-button">
+  <a href="javascript:history.back()">← Retour</a>
+</div>
+<style>
+  .back-button {
+    padding: 10px 20px;
+    text-align: left;
+  }
+  .back-button a {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 8px 14px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+  }
+  .back-button a:hover {
+    background-color: #0056b3;
+  }
+</style>
+
 </body>
 </html>

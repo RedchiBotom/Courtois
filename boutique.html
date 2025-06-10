@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boutique - MaBoutique</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="cart.js"></script>
+  <style>
+    .products {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 60px 20px;
+    }
+
+    .product {
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 12px;
+      width: 250px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      background: #f9f9f9;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+    }
+
+    .product img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .product h3 {
+      font-size: 18px;
+      margin: 10px 0 5px;
+    }
+
+    .product p {
+      font-size: 16px;
+      margin: 0 0 10px;
+    }
+
+    .product button {
+      background: black;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .product button:hover {
+      background: #333;
+    }
+
+    header {
+      background: #f9f9f9;
+      border-bottom: 1px solid #ddd;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    #cart-count {
+      font-size: 14px;
+      margin-left: 5px;
+      background: red;
+      color: white;
+      padding: 2px 6px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MaBoutique - Nos produits 🛒<span id="cart-count">0</span></h1>
+    <nav><ul><li><a href="index.html">Accueil</a></li><li><a href="auth.html">Connexion</a></li><li><a href="panier.html">Panier</a></li></ul></nav>
+  </header>
+
+  <main>
+    <section class="products">
+      <div class="product">
+        <a href="produit.html"><img src="poubelles_sans_fond/image_transparent.png" alt="Poubelle Classique">
+        <h3>Poubelle Classique</h3>
+        <p>49.99€</p>
+        <button class="add-to-cart" data-name="Poubelle Classique" data-price="49.99" data-image="poubelles_sans_fond/image_transparent.png">Ajouter au panier</button></a>
+      </div>
+      <div class="product">
+        <a href="produit-smart.html"><img src="poubelles_sans_fond/image3_transparent.png" alt="Poubelle Smart">
+        <h3>Poubelle Smart</h3>
+        <p>79.99€</p>
+        <button class="add-to-cart" data-name="Poubelle Smart" data-price="79.99" data-image="poubelles_sans_fond/image3_transparent.png">Ajouter au panier</button></a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const countSpan = document.getElementById('cart-count');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+    countSpan.textContent = count;
+  </script>
+</body>
+</html>

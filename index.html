@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MaBoutique - Accueil</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <style>
+    .poubelles-inline {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .poubelle {
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .poubelle img {
+      width: 180px;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .poubelle:hover {
+      transform: scale(1.1);
+    }
+
+    .bounce {
+      animation: bounce 0.5s ease;
+    }
+
+    @keyframes bounce {
+      0%   { transform: scale(1); }
+      30%  { transform: scale(1.2); }
+      50%  { transform: scale(0.9); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">MaBoutique</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+        
+<li>
+  <a href="panier.html" class="cart-link" style="position: relative;" class="cart-link" style="position: relative;">
+    🛒
+    <span id="cart-count" style="position: absolute; top: -8px; right: -10px; background: red; color: white; font-size: 12px; border-radius: 50%; padding: 2px 6px;">0</span>
+  </a>
+</li>
+
+          <li><a href="auth.html">Connexion</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero fade-in">
+    <div class="container">
+      <h2>Bienvenue sur notre site</h2>
+      <p>Découvrez nos solutions connectées pour la gestion intelligente des déchets.</p>
+    </div>
+  </section>
+
+  <section class="presentation slide-up">
+    <div class="container">
+      <p>Nos poubelles intelligentes détectent automatiquement les déchets et optimisent leur tri.</p>
+
+      <div class="poubelles-inline">
+        <a href="boutique.html" class="poubelle">
+          <img src="poubelles_sans_fond/image_transparent.png" alt="Poubelle Classique">
+        </a>
+        <a href="boutique.html" class="poubelle">
+          <img src="poubelles_sans_fond/image3_transparent.png" alt="Poubelle Smart">
+        </a>
+      </div>
+
+      <p>Choisissez le modèle qui correspond à vos besoins et contribuez à un monde plus propre !</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; Tom le goat</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const countSpan = document.getElementById('cart-count');
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+      countSpan.textContent = count;
+    });
+  </script>
+</body>
+
+</html>

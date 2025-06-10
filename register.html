@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .form-box {
+      max-width: 400px;
+      margin: auto;
+      background: #f4f4f4;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .form-box input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .form-box button {
+      width: 100%;
+      padding: 10px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .form-box a {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">MaBoutique</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="auth.html">Connexion</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero fade-in">
+    <div class="container">
+      <h2>Créer un compte</h2>
+    </div>
+  </section>
+
+  <section class="presentation slide-up">
+    <div class="container">
+      <div class="form-box">
+        <form>
+          <input type="text" placeholder="Nom d'utilisateur" required>
+          <input type="password" placeholder="Mot de passe" required>
+          <input type="password" placeholder="Confirmer le mot de passe" required>
+          <button type="submit">S'inscrire</button>
+        </form>
+        <a href="auth.html">Déjà un compte ? Se connecter</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; Tom le goat</p>
+    </div>
+  </footer>
+</body>
+</html>

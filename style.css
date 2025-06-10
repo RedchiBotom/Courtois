@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Typo & couleur */
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+  color: #000;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+header {
+  background: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+}
+
+.logo {
+  float: left;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+nav ul {
+  list-style: none;
+  float: right;
+}
+
+nav ul li {
+  display: inline;
+  margin-left: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+.hero {
+  background: url('https://images.unsplash.com/photo-1585298723682-7115561c51b5?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+  text-align: center;
+  padding: 120px 20px;
+  color: #000;
+  position: relative;
+}
+
+.hero h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px rgba(255,255,255,0.6);
+}
+
+.presentation {
+  padding: 60px 0;
+  text-align: center;
+  color: #000;
+}
+
+.presentation h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+footer {
+  background: #f9f9f9;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  color: #666;
+  border-top: 1px solid #ddd;
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.slide-up {
+  transform: translateY(50px);
+  opacity: 0;
+  animation: slideUp 1.5s ease forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Transition entre pages */
+.page-transition {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.page-transition.active {
+  opacity: 1;
+}

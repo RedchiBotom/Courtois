@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Produit - MaBoutique</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      padding: 20px;
+      background-color: #f6f6f6;
+    }
+
+    .product-container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .product-container img {
+      width: 250px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .product-details {
+      flex: 1;
+    }
+
+    .product-details h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .product-details p {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    select, button {
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 14px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: black;
+      color: white;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    button:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="product-container">
+    <img src="poubelles_sans_fond/image_transparent.png" alt="Poubelle Classique" />
+    <div class="product-details">
+      <h1>Poubelle Classique</h1>
+      <p>Une poubelle automatique simple et élégante pour une maison moderne.</p>
+      <p><strong>Prix : 49.99€</strong></p>
+
+      <label for="color">Choix de la couleur :</label>
+      <select id="color">
+        <option>Gris</option>
+        <option>Noir</option>
+        <option>Blanc</option>
+      </select>
+      <button onclick="addToCart()">Ajouter au panier</button>
+    </div>
+  </div>
+
+  <script>
+    function addToCart() {
+      const color = document.getElementById('color').value;
+      const product = {
+        name: "Poubelle Classique (" + color + ")",
+        price: 49.99,
+        image: "poubelles_sans_fond/image_transparent.png",
+        quantity: 1
+      };
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const existing = cart.find(item => item.name === product.name);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push(product);
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(product.name + " ajoutée au panier !");
+    }
+  </script>
+</body>
+</html>
